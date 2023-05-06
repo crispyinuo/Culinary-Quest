@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description"
+    content="Log in to CulinaryQuest to access your personalized collection of recipes, interact with the community, and share your culinary creations.">
+  <meta name="author" content="Yinuo Zhou">
+
+  <title>CulinaryQuest | Log In</title>
+  <!--GOOGLE FONT -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <!--BOOTSTRAP MAIN STYLES -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!--CUSTOM STYLE -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <!-- Login SECTION -->
+    <section id="login-section">
+      <div class="wrap-pad">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="text-center">
+              <h1>Login</h1>
+              <p class="lead">
+                Access your account.
+              </p>
+            </div>
+          </div>
+          <!-- ./ Heading div-->
+
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="login-form">
+              <form action="login_handler.php" method="POST">
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p class="mt-3">
+                  Don't have an account?<a href="register.html" class="btn btn-link">Register</a>
+                </p>
+              </form>
+
+
+            </div>
+          </div>
+          <!-- ./ Content div-->
+        </div>
+      </div>
+    </section>
+    <!-- END Login SECTION -->
+  </main>
+</body>
+
+</html>
