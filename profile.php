@@ -102,59 +102,6 @@ $conn->close();
 
                 <div class="col-md-10 col-md-offset-1 col-sm-12">
                     <div class="text-center">
-                        <h2>Saved Recipes</h2>
-                    </div>
-                    <ul class="community-items col-3">
-                        <li class="community-item ">
-                            <div class="item-main">
-                                <div class="community-image">
-                                    <img src="img/grilled-chicken.jpg" alt="recipe">
-                                    <div class="overlay">
-                                        <a class="preview btn btn-primary" title="View Details"
-                                            href="recipedetail.html">View Details</a>
-                                        <br>
-                                        <a class="delete btn btn-danger" title="Delete" href="#">Unsave</a>
-                                    </div>
-                                </div>
-                                <h5>Grilled Basil Chicken</h5>
-                            </div>
-                        </li>
-
-                        <li class="community-item ">
-                            <div class="item-main">
-                                <div class="community-image">
-                                    <img src="img/grilled-chicken.jpg" alt="recipe">
-                                    <div class="overlay">
-                                        <a class="preview btn btn-primary" title="View Details"
-                                            href="recipedetail.html">View Details</a>
-                                        <br>
-                                        <a class="delete btn btn-danger" title="Delete" href="#">Unsave</a>
-                                    </div>
-                                </div>
-                                <h5>Grilled Basil Chicken</h5>
-                            </div>
-                        </li>
-                        <li class="community-item ">
-                            <div class="item-main">
-                                <div class="community-image">
-                                    <img src="img/grilled-chicken.jpg" alt="recipe">
-                                    <div class="overlay">
-                                        <a class="preview btn btn-primary" title="View Details"
-                                            href="recipedetail.html">View Details</a>
-                                        <br>
-                                        <a class="delete btn btn-danger" title="Delete" href="#">Unsave</a>
-                                    </div>
-                                </div>
-                                <h5>Grilled Basil Chicken</h5>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- ./ saved recipes div-->
-
-
-                <div class="col-md-10 col-md-offset-1 col-sm-12">
-                    <div class="text-center">
                         <h2>Your Uploads</h2>
                     </div>
                     <ul class="community-items col-3">
@@ -165,7 +112,7 @@ $conn->close();
                                         <img src="<?php echo htmlspecialchars($recipe['image_url']); ?>" alt="recipe">
                                         <div class="overlay">
                                             <a class="preview btn btn-primary" title="View Details"
-                                                href="recipedetail.html?id=<?php echo $recipe['recipe_id']; ?>">View
+                                                href="recipedetail.php?id=<?php echo $recipe['recipe_id']; ?>">View
                                                 Details</a>
                                             <br>
                                             <a class="delete btn btn-danger" title="Delete" href="#">Delete</a>

@@ -20,6 +20,7 @@ if ($conn->connect_error) {
 $recipeName = $_POST['recipeName'];
 $recipeInstructions = $_POST['recipeInstructions'];
 $recipeImage = $_FILES['recipeImage'];
+$ingredients = $_POST['ingredients'];
 $user_id = $_SESSION['user_id'];
 
 // Save the image and get its URL
@@ -53,7 +54,7 @@ foreach ($ingredients as $key => $ingredient) {
         $stmt = $conn->prepare($sql);
 
         if ($stmt) {
-            $stmt->bind_param("idss", $recipe_id, $quantity, $unit_of_measure, $ingredient);
+            $stmt->bind_param("iiss", $recipe_id, $quantity, $unit_of_measure, $ingredient);
             $stmt->execute();
         } else {
             die("Error preparing statement: " . $conn->error);

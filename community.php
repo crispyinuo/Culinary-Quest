@@ -155,7 +155,7 @@ $conn->close();
                                             alt="<?php echo $recipe['title']; ?>">
                                         <div class="overlay">
                                             <a class="preview btn btn-primary" title="View Details"
-                                                href="recipedetail.php?id=<?php echo $recipe['id']; ?>">View Details</a>
+                                            href="recipedetail.php?id=<?php echo $recipe['recipe_id']; ?>">View Details</a>
                                         </div>
                                     </div>
                                     <h5>
