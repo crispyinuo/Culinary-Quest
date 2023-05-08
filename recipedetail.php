@@ -129,7 +129,7 @@ if ($result_recipe !== false) {
                 </div>
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 ">
                     <?php
-                    $logged_in_user_id = $_SESSION['user_id']; // Replace this with the actual user ID from your authentication system
+                    $logged_in_user_id = $_SESSION['user_id'];
                     
                     // Check if the user is an admin
                     $sql_check_admin = "SELECT is_admin FROM users WHERE user_id = ?";
@@ -140,14 +140,17 @@ if ($result_recipe !== false) {
                     $user_data = $result->fetch_assoc();
                     $is_admin = $user_data['is_admin'];
                     $stmt->close();
-
+                    
+                    
                     if ($recipe_data['user_id'] == $logged_in_user_id || $is_admin): ?>
+                        <a href="edit_recipe.php?id=<?php echo $recipe_id; ?>" class="btn btn-primary">Edit</a>
                         <form action="delete_recipe.php" method="get">
                             <input type="hidden" name="id" value="<?php echo $recipe_id; ?>">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
 
                     <?php else: ?>
+                        <button type="button" class="btn btn-primary" disabled>Edit</button>
                         <button type="button" class="btn btn-danger" disabled>Delete</button>
                     <?php endif; ?>
 
