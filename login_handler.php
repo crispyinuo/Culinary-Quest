@@ -28,6 +28,10 @@ if ($result->num_rows > 0) {
     $_SESSION['user_id'] = $row['user_id'];
     $_SESSION['username'] = $row['username'];
     $_SESSION['is_admin'] = $row['is_admin'];
+    // If the user is not found or the password is incorrect
+    $_SESSION['login_failed'] = true;
+    header("Location: login.html");
+
     header("Location: homepage.html"); // Redirect to the homepage or dashboard
   } else {
     header("Location: login.html?error=invalid_password"); // Redirect back to login page with error

@@ -91,7 +91,7 @@ if ($result_recipe !== false) {
                 </div>
 
                 <div class="details-image">
-                    <img src="img/grilled-chicken.jpg" alt="grilled chicken">
+                    <img src="<?php echo $recipe_data['image_url']; ?>" alt="Recipe Image">
                 </div>
 
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 ">

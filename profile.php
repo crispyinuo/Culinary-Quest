@@ -91,7 +91,7 @@ $conn->close();
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 ">
                     <div class="text-center">
                         <h1>Hi, Tommy Trojan!</h1>
-                        <a class="btn btn-secondary" href="login.html" role="button">Log Out</a>
+                        <a class="btn btn-secondary" href="logout.php" role="button">Log Out</a>
                         <p class="lead">
                             View all your recipes.
                         </p>
@@ -115,7 +115,7 @@ $conn->close();
                                                 href="recipedetail.php?id=<?php echo $recipe['recipe_id']; ?>">View
                                                 Details</a>
                                             <br>
-                                            <a class="delete btn btn-danger" title="Delete" href="#">Delete</a>
+                                            <a class="delete btn btn-danger" title="Delete" href="delete_recipe.php?id=<?php echo $recipe['recipe_id']; ?>">Delete</a>
                                         </div>
                                     </div>
                                     <h5>

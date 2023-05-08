@@ -32,7 +32,7 @@ if ($stmt) {
     $stmt->execute();
     if ($stmt->affected_rows > 0) {
         // Redirect to the community page
-        header("Location: community.php");
+        header("Location: profile.php");
         exit();
     } else {
         // Handle error: Recipe deletion failed

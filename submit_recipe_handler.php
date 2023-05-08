@@ -28,10 +28,21 @@ $target_dir = "uploads/";
 $target_file = $target_dir . basename($recipeImage["name"]);
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-if (move_uploaded_file($recipeImage["tmp_name"], $target_file)) {
-    $image_url = $target_file;
+// Check if the image file has a size greater than 0
+if ($recipeImage["size"] > 0) {
+    // Save the image and get its URL
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($recipeImage["name"]);
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+    if (move_uploaded_file($recipeImage["tmp_name"], $target_file)) {
+        $image_url = $target_file;
+    } else {
+        die("Error uploading the image.");
+    }
 } else {
-    die("Error uploading the image.");
+    // Set default image URL
+    $image_url = "https://t4.ftcdn.net/jpg/04/99/93/31/360_F_499933117_ZAUBfv3P1HEOsZDrnkbNCt4jc3AodArl.jpg";
 }
 
 $sql = "INSERT INTO recipes (title, user_id, image_url, direction_text) VALUES (?, ?, ?, ?)";
