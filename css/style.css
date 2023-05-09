@@ -366,6 +366,7 @@ a:focus {
 
 .details-image {
   text-align: center;
+  justify-content: center;
 }
 
 .details-image img {
