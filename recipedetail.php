@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$recipe_id = $_GET['id']; // Get the recipe ID from the URL, e.g., recipe.php?id=1
+$recipe_id = $_GET['id']; 
 
 $sql_recipe = "SELECT * FROM recipes WHERE recipe_id = $recipe_id";
 $result_recipe = $conn->query($sql_recipe);

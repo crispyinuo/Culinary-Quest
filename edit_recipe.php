@@ -107,7 +107,6 @@ if ($stmt) {
 
                     <div class="col-md-10 col-md-offset-1 col-sm-12">
                         <div class="submit-recipe-form">
-                            <!-- Modify the form tag to include the recipeId -->
                             <form action="edit_recipe_handler.php" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="recipeId" value="<?php echo $recipe_id; ?>">
 
@@ -121,7 +120,7 @@ if ($stmt) {
 
                                 <!-- Pre-populate the ingredients list with the existing data -->
                                 <div class="form-group">
-                                    <label for="recipeIngredients">Ingredients</label>
+                                    <label>Ingredients</label>
                                     <div id="ingredientsList">
                                         <?php foreach ($ingredients as $ingredient): ?>
                                             <div class="ingredient-entry">

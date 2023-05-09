@@ -115,6 +115,8 @@ $conn->close();
                                                 href="recipedetail.php?id=<?php echo $recipe['recipe_id']; ?>">View
                                                 Details</a>
                                             <br>
+                                            <a class="edit btn btn-primary" title="Edit" href="edit_recipe.php?id=<?php echo $recipe['recipe_id']; ?>">Edit</a>
+                                            <br>
                                             <a class="delete btn btn-danger" title="Delete" href="delete_recipe.php?id=<?php echo $recipe['recipe_id']; ?>">Delete</a>
                                         </div>
                                     </div>
@@ -126,7 +128,6 @@ $conn->close();
                         <?php endforeach; ?>
                     </ul>
                 </div>
-
                 <!-- ./ uploaded recipes div-->
             </div>
         </div>
