@@ -37,7 +37,7 @@ $sql = "SELECT * FROM ingredients WHERE recipe_id = ?";
 $stmt = $conn->prepare($sql);
 
 if ($stmt) {
-    $stmt->bind_param("i", $recipeId);
+    $stmt->bind_param("i", $recipe_id);
     $stmt->execute();
     $result = $stmt->get_result();
     $ingredients = $result->fetch_all(MYSQLI_ASSOC);
@@ -109,7 +109,7 @@ if ($stmt) {
                         <div class="submit-recipe-form">
                             <!-- Modify the form tag to include the recipeId -->
                             <form action="edit_recipe_handler.php" method="POST" enctype="multipart/form-data">
-                                <input type="hidden" name="recipeId" value="<?php echo $recipeId; ?>">
+                                <input type="hidden" name="recipeId" value="<?php echo $recipe_id; ?>">
 
                                 <!-- Pre-populate the form fields with the existing data -->
                                 <div class="form-group">
@@ -131,9 +131,10 @@ if ($stmt) {
                                                 <input type="text" class="form-control" name="ingredientUnit[]"
                                                     value="<?php echo htmlspecialchars($ingredient['unit_of_measure']); ?>"
                                                     placeholder="Unit of measure">
-                                                <input type="text" class="form-control" name="ingredients[]"
+                                                <input type="text" class="form-control" name="ingredientName[]"
                                                     value="<?php echo htmlspecialchars($ingredient['ingredient_name']); ?>"
                                                     placeholder="Ingredient name">
+
                                                 <button type="button"
                                                     class="btn btn-danger remove-ingredient">Remove</button>
                                             </div>
@@ -149,6 +150,17 @@ if ($stmt) {
                                         rows="5"
                                         placeholder="Enter instructions"><?php echo htmlspecialchars($recipe['direction_text']); ?></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="recipeImageUrl">Image URL</label>
+                                    <input type="text" class="form-control" id="recipeImageUrl" name="recipeImageUrl"
+                                        value="<?php echo htmlspecialchars($recipe['image_url']); ?>"
+                                        placeholder="Enter image URL">
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
 
                         </div>
                     </div>
