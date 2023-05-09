@@ -139,19 +139,22 @@ if ($result_recipe !== false) {
                     $is_admin = $user_data['is_admin'];
                     $stmt->close();
 
-
-                    if ($recipe_data['user_id'] == $logged_in_user_id || $is_admin): ?>
+                    if ($recipe_data['user_id'] == $logged_in_user_id): ?>
                         <a href="edit_recipe.php?id=<?php echo $recipe_id; ?>" class="btn btn-primary">Edit</a>
-                        <form action="delete_recipe.php" method="get">
+                        <form action="delete_recipe.php" method="get" style="display:inline;">
                             <input type="hidden" name="id" value="<?php echo $recipe_id; ?>">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
-
+                    <?php elseif ($is_admin): ?>
+                        <button type="button" class="btn btn-primary" disabled>Edit</button>
+                        <form action="delete_recipe.php" method="get" style="display:inline;">
+                            <input type="hidden" name="id" value="<?php echo $recipe_id; ?>">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     <?php else: ?>
                         <button type="button" class="btn btn-primary" disabled>Edit</button>
                         <button type="button" class="btn btn-danger" disabled>Delete</button>
                     <?php endif; ?>
-
                 </div>
             </div>
         </div>
