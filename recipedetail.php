@@ -82,11 +82,9 @@ if ($result_recipe !== false) {
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 ">
                     <div class="text-center">
                         <h1>
-                            <h1>
-                                <?php echo $recipe_data['title']; ?>
-                            </h1>
-
+                            <?php echo $recipe_data['title']; ?>
                         </h1>
+
                     </div>
                 </div>
 
@@ -130,7 +128,7 @@ if ($result_recipe !== false) {
                 <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 ">
                     <?php
                     $logged_in_user_id = $_SESSION['user_id'];
-                    
+
                     // Check if the user is an admin
                     $sql_check_admin = "SELECT is_admin FROM users WHERE user_id = ?";
                     $stmt = $conn->prepare($sql_check_admin);
@@ -140,8 +138,8 @@ if ($result_recipe !== false) {
                     $user_data = $result->fetch_assoc();
                     $is_admin = $user_data['is_admin'];
                     $stmt->close();
-                    
-                    
+
+
                     if ($recipe_data['user_id'] == $logged_in_user_id || $is_admin): ?>
                         <a href="edit_recipe.php?id=<?php echo $recipe_id; ?>" class="btn btn-primary">Edit</a>
                         <form action="delete_recipe.php" method="get">

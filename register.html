@@ -67,30 +67,30 @@
     </section>
     <!-- END Register SECTION -->
   </main>
-</body>
-</html>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get("error");
 
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const error = urlParams.get("error");
+    if (error) {
+      let errorMessage = "";
 
-  if (error) {
-    let errorMessage = "";
+      switch (error) {
+        case "empty_fields":
+          errorMessage = "Username and password fields cannot be empty.";
+          break;
+        case "password_mismatch":
+          errorMessage = "Passwords do not match.";
+          break;
+        case "username_exists":
+          errorMessage = "Username already exists.";
+          break;
+      }
 
-    switch (error) {
-      case "empty_fields":
-        errorMessage = "Username and password fields cannot be empty.";
-        break;
-      case "password_mismatch":
-        errorMessage = "Passwords do not match.";
-        break;
-      case "username_exists":
-        errorMessage = "Username already exists.";
-        break;
+      const errorDiv = document.getElementById("error-message");
+      errorDiv.style.display = "block";
+      errorDiv.innerText = errorMessage;
     }
+  </script>
+</body>
 
-    const errorDiv = document.getElementById("error-message");
-    errorDiv.style.display = "block";
-    errorDiv.innerText = errorMessage;
-  }
-</script>
+</html>

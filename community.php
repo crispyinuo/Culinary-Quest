@@ -89,7 +89,6 @@ $conn->close();
         .community-image img {
             width: 100%;
             height: 200px;
-            /* You can adjust the height as needed */
             object-fit: cover;
         }
 
